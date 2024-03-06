@@ -100,7 +100,7 @@
             },
             {
               name:'url',
-              type:'string'
+              type:'url'
             }
           ]
         }
