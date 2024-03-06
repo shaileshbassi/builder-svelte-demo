@@ -1,19 +1,20 @@
 <script lang="ts">
     //@ts-nocheck
-    import { onMount } from "svelte";
+    import { browser } from '$app/environment';
+    import Carousel from 'svelte-carousel';
   
     let slider: any;
-    let Carousel:any;
+    // let Carousel:any;
     export let title: any;
     export let cardData: any;
   
     let count = 0;
   
-    onMount(()=>{
-      import ("svelte-carousel").then(module => {
-        Carousel = module.default;
-      });
-    })
+    // onMount(()=>{
+    //   import ("svelte-carousel").then(module => {
+    //     Carousel = module.default;
+    //   });
+    // })
     function updateCarouselPosition() {
       if (slider) {
         const transformValue = `${count}px`;
@@ -40,7 +41,7 @@
     }
   </script>
   
-  {#if Carousel}
+  {#if browser}
     <div class="flex flex-col ml-3 md:ml-32 bg-primary-white py-5 gap-5 md:py-7">
       <div class="flex w-full gap-4">
         <h2 class="w-[60%] font-[600] text-[24px] md:w-[70%] md:text-[28px]">
@@ -49,14 +50,14 @@
         <div class="flex w-[40%] items-end gap-2 md:gap-6 justify-center">
           <button
             on:click={goToPrevSlide}
-            class="h-[contain] border rounded-full py-1 px-2 hover:bg-slate-600 hover:text-white flex flex-col gap-[3px] justify-center items-center"
+            class="h-[contain] border rounded-full py-1 bg-slate-300 px-2 hover:bg-slate-600 hover:text-white flex flex-col gap-[3px] justify-center items-center"
           >
             <div class="prevButton rotate-[135deg]"></div>
             <div class="prevButton rotate-[45deg]"></div>
           </button>
           <button
             on:click={goToNextSlide}
-            class="h-[contain] border rounded-full py-1 px-2 hover:bg-slate-600 hover:text-white flex flex-col gap-[3px] justify-center items-center"
+            class="h-[contain] border rounded-full py-1 px-2 bg-slate-300 hover:bg-slate-600 hover:text-white flex flex-col gap-[3px] justify-center items-center"
           >
           <div class="nextButton rotate-45"></div>
           <div class="nextButton rotate-[135deg]"></div>
@@ -74,7 +75,7 @@
         <div class="sliderCardWrapper flex">
           {#each cardData as slide}
             <div
-              class=" sliderCard cursor-pointer mb-5 gap-2 md:gap-6 bg-primary-gray py-6 px-4 md:px-6 md:py-8"
+              class=" sliderCard cursor-pointer mb-5 gap-2 md:gap-6 bg-gray-100 py-6 px-4 md:px-6 md:py-8"
             >
               <img
                 src={slide.image}

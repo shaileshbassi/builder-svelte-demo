@@ -23,6 +23,7 @@
       content={data.content}
       apiKey={import.meta.env.VITE_BUILDER_PUBLIC_API_KEY}
       customComponents={CUSTOM_COMPONENTS}
+      locale={data.dynamicLocale}
     />
   {:else}
     Content Not Found
