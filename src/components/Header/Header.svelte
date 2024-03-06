@@ -24,8 +24,8 @@
       class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center"
     >
       {#each navLinks as nav}
-      <button on:click={() => click(nav.url)} class="mr-5 hover:text-gray-900">{nav.title}</button>
-
+      <!-- <button on:click={() => click(nav.url)} class="mr-5 hover:text-gray-900">{nav.title}</button> -->
+      <a href={nav.url} class="mr-5 hover:text-gray-900">{nav.title}</a>
       {/each}
     </nav>
   </div>

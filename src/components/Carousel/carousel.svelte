@@ -1,19 +1,20 @@
 <script lang="ts">
     //@ts-nocheck
-    import { onMount } from "svelte";
+    import { browser } from '$app/environment';
+    import Carousel from 'svelte-carousel';
   
     let slider: any;
-    let Carousel:any;
+    // let Carousel:any;
     export let title: any;
     export let cardData: any;
   
     let count = 0;
   
-    onMount(()=>{
-      import ("svelte-carousel").then(module => {
-        Carousel = module.default;
-      });
-    })
+    // onMount(()=>{
+    //   import ("svelte-carousel").then(module => {
+    //     Carousel = module.default;
+    //   });
+    // })
     function updateCarouselPosition() {
       if (slider) {
         const transformValue = `${count}px`;
@@ -40,7 +41,7 @@
     }
   </script>
   
-  {#if Carousel}
+  {#if browser}
     <div class="flex flex-col ml-3 md:ml-32 bg-primary-white py-5 gap-5 md:py-7">
       <div class="flex w-full gap-4">
         <h2 class="w-[60%] font-[600] text-[24px] md:w-[70%] md:text-[28px]">

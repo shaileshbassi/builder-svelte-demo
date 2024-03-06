@@ -1,4 +1,5 @@
 // Create an array of your custom compon ents and their properties
+// @ts-nocheck
   import Carousel from "../components/Carousel/carousel.svelte";
   import CardSlider from '../components/CardSlider/SliderCard.svelte'
   import Header from '../components/Header/Header.svelte'
