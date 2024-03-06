@@ -18,7 +18,7 @@
 
 <div
   class="lg:flex lg:px-4 lg:py-2
-       md:p-2 lg:mx-[65px]"
+       md:p-2 lg:mx-[25px]"
   data-testid="container-div"
 >
   <div class="md:p-2 lg:items-start lg:py-2 lg:pr-8 flex flex-col lg:w-[100%]">
@@ -59,7 +59,7 @@
     {:else if item?.tabVideoOrImage.includes("/image")}
       <img
         src={item.tabVideoOrImage}
-        class="width:100% object-fill lg:h-[350px] mb-2 lg:w-[90%] mt-8"
+        class="width:100% object-fill lg:h-[300px] rounded-lg mb-2 lg:w-[90%] mt-8"
         alt="img"
       />
     {:else}
