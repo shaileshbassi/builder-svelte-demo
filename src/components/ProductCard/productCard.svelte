@@ -1,5 +1,4 @@
 <script lang="ts">
-  import FilterPanel from "./filterPanel.svelte";
   export let articles: any;
 </script>
 
