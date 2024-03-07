@@ -3,8 +3,8 @@
   </script>
   
   <main class="box-border flex relative flex-col shrink-0 p-5 m-auto rounded-3xl border-0 border-solid bg-sky-100 bg-opacity-30">
-    <section class="flex gap-5 w-1/2">
-      <article class="flex flex-col ">
+    <section class="flex flex-col-reverse md:flex-row">
+      <article class="flex flex-col">
         <header class="box-border flex relative flex-col shrink-0 my-auto">
           <h1 class="box-border relative shrink-0 p-1 mb-5 h-auto text-3xl font-bold">
             Lorem Ipsum

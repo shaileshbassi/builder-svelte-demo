@@ -1,7 +1,7 @@
 <script lang="ts">
     import { isPreviewing, Content } from "@builder.io/sdk-svelte";
     import { CUSTOM_COMPONENTS } from '../../registerComponents/componentsRegistry'
-  import SocialMedia from "../../components/social-media.svelte";
+  import CardContainer from "../../components/cardContainer.svelte";
  
       // this data comes from the function in `+page.server.js`, which runs on the server only
       export let data;
@@ -19,7 +19,7 @@
         apiKey={import.meta.env.VITE_BUILDER_PUBLIC_API_KEY}
         customComponents={CUSTOM_COMPONENTS}
       />
-      <SocialMedia />
+      <CardContainer />
     {:else}
       Content Not Found
     {/if}
