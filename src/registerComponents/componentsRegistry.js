@@ -4,6 +4,7 @@
   import CardSlider from '../components/CardSlider/SliderCard.svelte'
   import Header from '../components/Header/Header.svelte'
   import TabSection from '../components/TabComponent/TabSection.svelte'
+import ProductData from "../components/ProductCard/productData.svelte";
   
   export const CUSTOM_COMPONENTS = [
     {
@@ -223,4 +224,8 @@
         },
       ],
     },
+    {
+      component: ProductData,
+      name:'product-list'
+    }
   ];

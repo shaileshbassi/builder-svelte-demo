@@ -3,11 +3,11 @@
 </script>
 
   <div class="px-[10px] max-w-[1200px]">
-    <h1 class="mb-8 text-2xl leading-snug text-[#3dcd58] px-2">Products</h1>
+    <h1 class="mb-8 text-2xl leading-snug text-[#3dcd58] px-2 flex justify-center">Products</h1>
     <div class="flex flex-wrap">
       {#each articles as article, index}
         <div
-          class="px-2 relative h-[480px] mb-5 sm:flex-grow-0 sm:flex-shrink-0 lg:px-3 w-[392px]"
+          class="px-2 relative mb-5 sm:flex-grow-0 sm:flex-shrink-0 lg:px-3 w-[350px]"
         >
           <article
             class="flex flex-col h-[100%] bg-[#fff] shadow-[5px_5px_5px_0_rgba(51,51,51,0.14),0_1px_7px_0_rgba(51,51,51,0.2)] border-properties"

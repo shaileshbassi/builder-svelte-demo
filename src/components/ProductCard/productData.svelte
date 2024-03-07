@@ -48,6 +48,5 @@
 <div class="flex">
   <FilterPanel on:childClick={fetchData}/>
   <ProductCard articles={articles}/>
-  <!-- <Paginationbutton totalPages={totalPages} on:childClick={fetchData}/> -->>
 </div>
 </main>

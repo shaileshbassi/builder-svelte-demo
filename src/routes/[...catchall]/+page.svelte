@@ -12,9 +12,6 @@
 <svelte:head>
   <title>Home</title>
 </svelte:head>
-<!-- locale={data?.content?.query[1]?.value[0]}, -->
-
-<paginate content={data}/>
 
 <main>
   {#if canShowContent}
