@@ -1,0 +1,15 @@
+import { fetchOneEntry, getBuilderSearchParams } from '@builder.io/sdk-svelte';
+ 
+/** @type {import('./$types').PageServerLoad} */
+export async function load(event) {
+    const content = await fetchOneEntry({
+        model: 'svelte-builder-demo',
+        apiKey: import.meta.env.VITE_BUILDER_PUBLIC_API_KEY,
+        options: getBuilderSearchParams(event.url.searchParams),
+        userAttributes: {
+            urlPath: event.url.pathname || '/',
+        }
+    });
+ 
+    return { content };
+}
