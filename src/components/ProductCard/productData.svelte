@@ -19,7 +19,7 @@
       try {
   
         //fetching data from svelte-cards
-        if(($filterByBrandName.length==0)){
+        if(($filterByBrandName.length==0 || $filterByBrandName == "All")){
         const response = await fetch(BaseURL);
   
         if (!response.ok) {

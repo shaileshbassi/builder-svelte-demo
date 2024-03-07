@@ -27,7 +27,7 @@
   
 </script>
 
-<header class="text-gray-600 body-font">
+<header class="text-gray-600 body-font shadow-md">
   <div
     class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
   >

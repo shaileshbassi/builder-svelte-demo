@@ -2,7 +2,7 @@
   export let articles: any;
 </script>
 
-  <div class="px-[10px] max-w-[1200px]">
+  <div class="px-[10px] max-w-[1200px] mt-4">
     <h1 class="mb-8 text-2xl leading-snug text-[#3dcd58] px-2 flex justify-center">Products</h1>
     <div class="flex flex-wrap">
       {#each articles as article, index}
@@ -16,7 +16,7 @@
               <img
                 src={article.data.image}
                 alt="image{index}"
-                class="w-[100%] h-[215px]"
+                class="w-[100%] h-[215px] object-cover object-[0%_35%]"
               />
             </div>
             <div class="wiztopic-content flex flex-col flex-grow-[1] p-[30px]">

@@ -5,8 +5,7 @@
     import { createEventDispatcher } from "svelte";
     const dispatch = createEventDispatcher();
     let brands:any;
-    let checkedBrands: number[] = [];
-    let selection=[];
+    let checkedBrands: string;
   
     onMount(()=>{
         fetchData();
@@ -28,32 +27,33 @@
       }
     }
  
-    function handleCheckboxClick(brandId: number) {
+    function handleRadioClick(brandId: number) {
     filterByBrandName.update((checkedBrands)=>{
-      if (checkedBrands.includes(brandId)) {
-          checkedBrands = checkedBrands.filter((indexItem: number) => indexItem !== brandId);
+          checkedBrands = brandId;
           return checkedBrands;
-      } else {
-        //   checkedBrands.push(brandId);
-        return[...checkedBrands, brandId];
-      }
-    })
+      })
     dispatch('childClick');
 }
 
     $:{console.log("checkedBrands",checkedBrands);}
   </script>
  
-  <div class="flex flex-col px-5 py-4 w-[260px] border">
-    <h2 class="text-xl font-semibold  w-fit mx-auto">Brands</h2>
+ <div class="bg-[#eee]">
+  <div class="flex flex-col px-5 py-4 w-[260px] border sticky top-4 h-fit bg-[#eee]">
+    <h2 class="text-2xl font-semibold w-fit px-3 mb-3">Brands</h2>
     <div class="flex flex-col">
     {#if brands !==undefined && brands.length > 0}
+    <label class="text-blue-950 px-3 flex items-center gap-5">
+      <input type="radio" class="w-4 h-4" name="brand" on:click={() => handleRadioClick("All")}/>
+      <span class="text-lg py-1">All</span>
+    </label>
     {#each brands as brand,index}
       <label class="text-blue-950 px-3 flex items-center gap-5">
-        <input type="checkbox" class="w-6 h-6" bind:group={selection} value={index} on:click={() => handleCheckboxClick(brand.id)}/>
+        <input type="radio" class="w-4 h-4" name="brand" on:click={() => handleRadioClick(brand.id)}/>
         <span class="text-lg py-1">{brand?.data?.brandName}</span>
       </label>
     {/each}
       {/if}
   </div>
+</div>
 </div>
