@@ -72,7 +72,7 @@
         infinite={false}
         arrows={false}
       >
-        <div class="sliderCardWrapper flex">
+        <div class="sliderCardWrapper flex pl-3">
           {#each cardData as slide}
             <div
               class=" sliderCard cursor-pointer mb-5 gap-2 md:gap-6 bg-gray-100 py-6 px-4 md:px-6 md:py-8"

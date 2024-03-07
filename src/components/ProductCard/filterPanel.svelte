@@ -38,8 +38,8 @@
     $:{console.log("checkedBrands",checkedBrands);}
   </script>
  
- <div class="bg-[#eee]">
-  <div class="flex flex-col px-5 py-4 w-[260px] border sticky top-4 h-fit bg-[#eee]">
+ <div class=" bg-gradient-to-b from-[#fff] to-[#eee] border">
+  <div class="flex flex-col px-5 py-4 w-[260px] sticky top-4 h-fit">
     <h2 class="text-2xl font-semibold w-fit px-3 mb-3">Brands</h2>
     <div class="flex flex-col">
     {#if brands !==undefined && brands.length > 0}
