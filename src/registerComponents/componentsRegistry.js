@@ -5,6 +5,8 @@
   import Header from '../components/Header/Header.svelte'
   import TabSection from '../components/TabComponent/TabSection.svelte'
 import ProductData from "../components/ProductCard/productData.svelte";
+import BrandFilter from "../components/BrandFilter/BrandFilter.svelte";
+import ProductBrandFilter from "../components/BrandFilter/productBrandFilter.svelte";
   
   export const CUSTOM_COMPONENTS = [
     {
@@ -227,5 +229,30 @@ import ProductData from "../components/ProductCard/productData.svelte";
     {
       component: ProductData,
       name:'product-list'
-    }
+    },
+    {
+      component: BrandFilter,
+      name:"BrandFilter",
+      inputs: [
+        {
+          name: "title",
+          type: "string",
+        },
+        {
+          name: "selectedBrands",
+          type: "list",
+          subFields: [
+            {
+              name:"brand",
+              type:"reference",
+              model:"brands"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      component: ProductBrandFilter,
+      name:'filter-brand-product'
+    },
   ];

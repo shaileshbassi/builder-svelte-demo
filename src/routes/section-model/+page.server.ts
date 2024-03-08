@@ -1,9 +1,14 @@
 import { fetchOneEntry, getBuilderSearchParams } from '@builder.io/sdk-svelte';
+import { selectedLanguage } from '../../components/ProductCard/stores.js';
  
 /** @type {import('./$types').PageServerLoad} */
+let myLocale:string = "default"
 
- let myLocale:any = 'default'
+// selectedLanguage.subscribe(async (value) => {
+//     myLocale = value;
+// });
 
+// console.log(myLocale)
 export async function load(event) {
     const content = await fetchOneEntry({
         model: 'svelte-builder-demo',

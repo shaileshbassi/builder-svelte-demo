@@ -2,6 +2,7 @@
     import { isPreviewing, Content } from "@builder.io/sdk-svelte";
     import { CUSTOM_COMPONENTS } from '../../registerComponents/componentsRegistry'
   import CardContainer from "../../components/cardContainer.svelte";
+  import BlockLocale from '../../components/blockLocale.svelte'
  
       // this data comes from the function in `+page.server.js`, which runs on the server only
       export let data;
@@ -20,6 +21,7 @@
         customComponents={CUSTOM_COMPONENTS}
         locale={data.myLocale}
       />
+      <!-- <BlockLocale /> -->
       <CardContainer />
     {:else}
       Content Not Found

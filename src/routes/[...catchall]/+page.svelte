@@ -16,6 +16,7 @@
 <main>
   {#if canShowContent}
     <Content
+      enrich={true}
       model="svelte-page"
       content={data.content}
       apiKey={import.meta.env.VITE_BUILDER_PUBLIC_API_KEY}

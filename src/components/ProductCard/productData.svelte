@@ -41,12 +41,16 @@
         console.error('Error fetching data:', error);
       }
     }
+
+    filterByBrandName.subscribe(async (value) => {
+    await fetchData();
+  });
   
   </script>
   
 <main>
 <div class="flex">
-  <FilterPanel on:childClick={fetchData}/>
+  <FilterPanel/>
   <ProductCard articles={articles}/>
 </div>
 </main>

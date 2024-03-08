@@ -2,8 +2,6 @@
     //@ts-nocheck
     import { onMount } from "svelte";
     import { filterByBrandName } from "./stores";
-    import { createEventDispatcher } from "svelte";
-    const dispatch = createEventDispatcher();
     let brands:any;
     let checkedBrands: string;
   
@@ -32,7 +30,6 @@
           checkedBrands = brandId;
           return checkedBrands;
       })
-    dispatch('childClick');
 }
 
     $:{console.log("checkedBrands",checkedBrands);}
