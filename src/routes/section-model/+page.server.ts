@@ -1,5 +1,5 @@
 import { fetchOneEntry, getBuilderSearchParams } from '@builder.io/sdk-svelte';
-import { selectedLanguage } from '../../components/ProductCard/stores.js';
+// import { selectedLanguage } from '../../components/ProductCard/stores.js';
  
 /** @type {import('./$types').PageServerLoad} */
 let myLocale:string = "default"
