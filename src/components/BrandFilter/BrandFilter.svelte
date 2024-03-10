@@ -2,22 +2,14 @@
 import { checkedBrandName  } from "../ProductCard/stores";
 export let title:string;
 export let selectedBrands:any;
-console.log(selectedBrands);
 
-function handleRadioClick(brandId: string) {
-    checkedBrandName.update((checkedBrands)=>{
-        if(checkedBrands.indexOf(brandId) == -1){
-            checkedBrands.push(brandId);
-        }
-        else{
-            checkedBrands.splice(checkedBrands.indexOf(brandId),1);
-        }
-        return checkedBrands;
-      })
-}
+let selectedCheckbox:string[] = [];
 
-    $:{console.log("checkedBrands",$checkedBrandName);}
-
+$:{checkedBrandName.update((checkedBrands) => {
+    checkedBrands = selectedCheckbox;
+    return checkedBrands;
+});}
+// $:{console.log("checkedBrands",$checkedBrandName);}
 </script>
 
 <div class=" bg-gradient-to-b h-auto sticky top-4">
@@ -27,11 +19,12 @@ function handleRadioClick(brandId: string) {
       {#if selectedBrands !==undefined && selectedBrands.length > 0}
       {#each selectedBrands as selectedbrand,index}
         <label class="text-blue-950 px-3 flex items-center gap-5">
-          <input type="checkbox" class="w-4 h-4" name="brand" on:click={() => handleRadioClick(selectedbrand?.brand?.id)}/>
+          <input type="checkbox" class="w-4 h-4" name="brand" bind:group={selectedCheckbox} value={selectedbrand.brand.id}/>
           <span class="text-lg py-1">{selectedbrand?.brand?.value?.data?.brandName}</span>
         </label>
       {/each}
     {/if}
     </div>
+    <button class="mt-3 bg-slate-300 py-2" on:click={() => selectedCheckbox = []}>Clear Filter</button>
   </div>
   </div>
