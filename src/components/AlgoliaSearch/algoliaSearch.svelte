@@ -33,7 +33,7 @@
 <!-- Search input -->
 <div class="flex justify-center mt-5">
   <input
-    class="border-2 border-solid border-color-text-gray px-1 py-1 sm:w-1/2 md:w-1/3"
+    class="border-2 border-solid rounded-lg shadow-xl border-color-text-gray px-2 py-1 sm:w-1/2 md:w-1/3"
     placeholder="Search product"
     type="text"
     on:input={(e) => handleSearch(e)}
@@ -44,7 +44,7 @@
 <div class="flex justify-center mt-3">
   {#each searchResults as result (result.objectID)}
     <div
-      class="flex justify-center mx-3 w-1/4 border-[1px] border-solid border-color-text-gray bg-zinc-50 rounded hover:border-[2px] hover:border-black hover:bg-slate-100"
+      class="flex justify-center mx-3 w-1/4 border-[1px] border-solid border-color-text-gray bg-zinc-50 rounded-md hover:border-[2px] hover:border-black hover:bg-slate-100"
     >
       <div class="p-2">
         <a href="{result.query[0].value}"><h5 class="text-lg font-bold">{result.data.title}</h5></a>
