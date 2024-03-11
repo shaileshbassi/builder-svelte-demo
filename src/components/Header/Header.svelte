@@ -26,9 +26,9 @@
 </script>
 
 <header class="flex flex-col text-gray-600 body-font shadow-md z-10 pb-8">
-  <div class="order-2 w-full">
+  <!-- <div class="order-2 w-full">
     <Search />
-  </div>
+  </div> -->
   
   <div
     class="container w-full mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
