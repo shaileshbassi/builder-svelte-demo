@@ -1,19 +1,21 @@
 <script>
-  import { isPreviewing, Content } from "@builder.io/sdk-svelte";
-  import { CUSTOM_COMPONENTS } from '../../registerComponents/componentsRegistry'
+  // import { isPreviewing, Content } from "@builder.io/sdk-svelte";
+  // import { CUSTOM_COMPONENTS } from '../../registerComponents/componentsRegistry'
 
 	// this data comes from the function in `+page.server.js`, which runs on the server only
-	export let data;
+	// export let data;
 
   // we want to show unpublished content when in preview mode.
-  const canShowContent = data.content || isPreviewing();
+  // const canShowContent = data.content || isPreviewing();
 </script>
 
-<svelte:head>
+<!-- <svelte:head>
   <title>Home</title>
-</svelte:head>
+</svelte:head> -->
 
-<main>
+<slot />
+
+<!-- <main>
   {#if canShowContent}
     <Content
       enrich={true}
@@ -26,4 +28,4 @@
   {:else}
     Content Not Found
   {/if}
-</main>
+</main> -->

@@ -6,8 +6,12 @@
   export let logoName: any;
   export let image: any;
   export let navLinks: any;
+  export let isSolidHeader: boolean;
+  console.log(isSolidHeader);
 
   let currentLanguage = "en-US";
+
+  let isSolidBg = false;
 
   function changeLanguage() {
     currentLanguage = currentLanguage === "en-US" ? "en-FR" : "en-US";
@@ -25,7 +29,7 @@
   }
 </script>
 
-<header class="flex flex-col text-gray-600 body-font shadow-md z-10 pb-8">
+<header class="flex flex-col text-gray-600 body-font shadow-md z-10 pb-8 w-full {isSolidBg ? 'bg-red-400 absolute' : 'relative'} ">
   <!-- <div class="order-2 w-full">
     <Search />
   </div> -->
