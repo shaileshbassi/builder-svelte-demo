@@ -2,6 +2,7 @@
 import { checkedBrandName  } from "../ProductCard/stores";
 export let title:string;
 export let selectedBrands:any;
+console.log(selectedBrands, "selected");
 
 let selectedCheckbox:string[] = [];
 
@@ -12,6 +13,7 @@ $:{checkedBrandName.update((checkedBrands) => {
 // $:{console.log("checkedBrands",$checkedBrandName);}
 </script>
 
+
 <div class=" bg-gradient-to-b h-auto sticky top-4">
     <div class="flex flex-col px-5 py-4 w-[260px] h-fit">
       <h2 class="text-2xl font-semibold w-fit px-3 mb-3">{title}</h2>
@@ -19,7 +21,7 @@ $:{checkedBrandName.update((checkedBrands) => {
       {#each selectedBrands as selectedbrand}
         <label class="text-blue-950 px-3 flex items-center gap-5">
           <input type="checkbox" class="w-4 h-4" name="brand" bind:group={selectedCheckbox} value={selectedbrand?.brand?.id}/>
-          <span class="text-lg py-1">{selectedbrand?.brand?.value?.data?.brandName}</span>
+          <span class="text-lg py-1">{selectedbrand?.brand["value"].data?.brandName}</span>
         </label>
       {/each}
     </div>
